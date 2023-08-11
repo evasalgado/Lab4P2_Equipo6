@@ -33,6 +33,8 @@ public class Pokemon {
         this.spe = spe;
         this.stado = stado;
     }
+    
+    
 
     public String getEspecie() {
         return especie;
