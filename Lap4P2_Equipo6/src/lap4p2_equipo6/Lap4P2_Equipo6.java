@@ -57,6 +57,27 @@ public class Lap4P2_Equipo6 {
     public static void capturarpokemon() {
         System.out.println("Ingrese la especie del pokemon:");
         String especie = leer.next();
+        System.out.println("Ingrese el nivel de poder del pokemom: ");
+        int nivel = leer.nextInt();
+        System.out.println("Ingrese la cantidad de puntos de experiencia del pokemon: ");
+        int xp = leer.nextInt();
+        System.out.println("Ingrese la cantidad de puntos necesarios para subir de nivel: ");
+        int subirnivel = leer.nextInt();
+        System.out.println("Ingrese la cantidad de movimientos que tiene(no pueden ser mas de 4): ");
+        int [] cantmov = new int[leer.nextInt(4)];
+        System.out.println("Ingrese la cantidad de puntos de vida que tiene: ");
+        int hp = leer.nextInt();
+        System.out.println("Ingrese nivel de ataque: ");
+        int atk = leer.nextInt();
+        System.out.println("Ingrese nivel de defensa: ");
+        int def = leer.nextInt();
+        System.out.println("Ingrese nivel de alcance de ataque especial: ");
+        int sp = leer.nextInt();
+        System.out.println("Ingrese nivel de velocidad del pokemon: ");
+        int spe = leer.nextInt();
+        System.out.println("Ingrese el estado actual del pokemon: ");
+        String estado = leer.next();
+        pokemones.add(new Pokemon(especie, nivel, xp, spe, hp, atk, def, sp, spe, estado));
     }
 
         static String getString(String n) {
