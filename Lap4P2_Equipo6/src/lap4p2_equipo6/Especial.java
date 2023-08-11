@@ -12,10 +12,7 @@ package lap4p2_equipo6;
  */
 
 public class Especial {
-     Scanner leer = new Scanner(System.in);
-     Random alea = new Random();
-     
-     private int Random1;
-     private int Random2;
-     private int suma;
+   
+    
+    
 }
