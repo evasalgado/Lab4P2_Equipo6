@@ -10,8 +10,8 @@ public class Lap4P2_Equipo6 {
     static Random alea = new Random();
     static ArrayList<Movimiento> movimientos = new ArrayList<>();
     static ArrayList<Entrenador> entrenadores = new ArrayList<>();
-
     public static void main(String[] args) {
+        int cont =0;
         int op = 0;
         while (op != 5) {
             Entrenador e = new Entrenador();
@@ -32,7 +32,8 @@ public class Lap4P2_Equipo6 {
                         break;
                     }
                 case 2:
-                    capturarPokemon();
+                    capturarPokemon(cont);
+                    
                     break;
                 case 3:
 
@@ -65,16 +66,17 @@ public class Lap4P2_Equipo6 {
         int[] poke = new int[cantpokemon];
         entrenadores.add( new Entrenador(name, edad, money));
     }
-    public static void capturarPokemon(){
+    public static void capturarPokemon(int cont){
+        
         System.out.println(entrenadores);
         System.out.println("Ingrese indice de entrenador: ");
         int ind = leer.nextInt();
         if (ind>=0&&ind>entrenadores.size()) {
-            crearrpokemon(entrenadores.get(ind));
+            crearrpokemon(entrenadores.get(ind),cont);
             System.out.println("");
         }
     }
-    public static void crearrpokemon(Entrenador e) {
+    public static void crearrpokemon(Entrenador e, int cont) {
 
         System.out.println("Ingrese la especie del pokemon:");
         String especie = leer.next();
@@ -105,8 +107,12 @@ public class Lap4P2_Equipo6 {
             e.caja.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
                 break;
             case 'e':
-                for (int i = 0; i < 6; i++) {
-                    e.getPoke()[i]= ;
+                if (cont>0&&cont<6) {
+                    e.getPoke()[cont]= new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado);
+                } else if(cont>6){
+                    System.out.println("Espacio de equipo lleno"
+                            + "\n mandando a caja");
+                    e.caja.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
                 }
                 break;
             default:
