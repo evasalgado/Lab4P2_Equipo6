@@ -32,7 +32,7 @@ public class Lap4P2_Equipo6 {
                         break;
                     }
                 case 2:
-                    crearrpokemon(e);
+                    capturarPokemon();
                     break;
                 case 3:
 
@@ -68,6 +68,11 @@ public class Lap4P2_Equipo6 {
     public static void capturarPokemon(){
         System.out.println(entrenadores);
         System.out.println("Ingrese indice de entrenador: ");
+        int ind = leer.nextInt();
+        if (ind>=0&&ind>entrenadores.size()) {
+            crearrpokemon(entrenadores.get(ind));
+            System.out.println("");
+        }
     }
     public static void crearrpokemon(Entrenador e) {
 
@@ -93,11 +98,26 @@ public class Lap4P2_Equipo6 {
         System.out.println("Ingrese nivel de velocidad del pokemon: ");
         int spe = leer.nextInt();
         String estado = "neutral";
-        e.caja.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
+        System.out.println("Desea ingresarlo a la caja o al equipo?[c/e]");
+        char op = leer.next().charAt(0);
+        switch (op) {
+            case 'c':
+            e.caja.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
+                break;
+            case 'e':
+                for (int i = 0; i < 6; i++) {
+                    e.getPoke()[i]= ;
+                }
+                break;
+            default:
+                System.out.println("No esta en las opciones");
+        }
+        
+        
     }
 
     public static void entrenar() {
-
+        
     }
 
     public static void movimiento() {
