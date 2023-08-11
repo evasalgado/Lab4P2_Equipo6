@@ -4,8 +4,7 @@
  */
 package lap4p2_equipo6;
 
-import java.util.Random;
-import java.util.Scanner;
+
 
 /**
  *
