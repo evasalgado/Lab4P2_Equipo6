@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lap4p2_equipo6;
 
-/**
- *
- * @author walter
- */
-public class Fisico {
+
+public class Fisico extends Movimiento{
+    
+    
+    
+    
+    
+    
+
+    @Override
+    public int mov() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
