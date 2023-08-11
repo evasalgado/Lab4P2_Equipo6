@@ -58,4 +58,21 @@ public class Lap4P2_Equipo6 {
         System.out.println("Ingrese la especie del pokemon:");
         String especie = leer.next();
     }
+
+        static String getString(String n) {
+        Scanner lea = new Scanner(System.in);
+        String s1 = "";
+
+        while (s1.equals("")) {
+            System.out.println(n);
+            s1 = lea.nextLine();
+            if (!s1.matches("^[A-Za-z ]*$")) {
+
+                s1 = "";
+
+            }
+        }
+        return s1;
+    }
+    
 }
