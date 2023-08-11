@@ -43,11 +43,11 @@ public class Entrenador {
         this.dinero = dinero;
     }
 
-    public int[] getPoke() {
+    public Pokemon[] getPoke() {
         return poke;
     }
 
-    public void setPoke(int[] poke) {
+    public void setPoke(Pokemon[] poke) {
         this.poke = poke;
     }
 
