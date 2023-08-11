@@ -8,7 +8,7 @@ public class Pokemon {
     private int nivel;
     private int xpAcum;
     private int cpNes;
-    private int []move = new int[4];
+    private Pokemon []move = new Pokemon[4];
     private int hp;
     private int atk;
     private int def;
@@ -68,11 +68,11 @@ public class Pokemon {
         this.cpNes = cpNes;
     }
 
-    public int[] getMove() {
+    public Pokemon[] getMove() {
         return move;
     }
 
-    public void setMove(int[] move) {
+    public void setMove(Pokemon[] move) {
         this.move = move;
     }
 
