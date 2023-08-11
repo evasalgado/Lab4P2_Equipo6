@@ -10,11 +10,13 @@ public class Lap4P2_Equipo6 {
     static Random alea = new Random();
     static ArrayList<Movimiento> movimientos = new ArrayList<>();
     static ArrayList<Entrenador> entrenadores = new ArrayList<>();
+    static Pokemon p = new Pokemon();
     public static void main(String[] args) {
-        int cont =0;
+        int cont =0, cont2=0;
         int op = 0;
         while (op != 5) {
             Entrenador e = new Entrenador();
+            
             System.out.println("Bienvenido al Pokedex\n"
                     + "1. Registrar Entrenador\n"
                     + "2. Capturar/ Entrenar\n"
@@ -32,7 +34,7 @@ public class Lap4P2_Equipo6 {
                         break;
                     }
                 case 2:
-                    capturarPokemon(cont);
+                    capturarPokemon(cont,cont2);
                     
                     break;
                 case 3:
@@ -66,17 +68,17 @@ public class Lap4P2_Equipo6 {
         int[] poke = new int[cantpokemon];
         entrenadores.add( new Entrenador(name, edad, money));
     }
-    public static void capturarPokemon(int cont){
+    public static void capturarPokemon(int cont, int cont2){
         
         System.out.println(entrenadores);
         System.out.println("Ingrese indice de entrenador: ");
         int ind = leer.nextInt();
         if (ind>=0&&ind>entrenadores.size()) {
-            crearrpokemon(entrenadores.get(ind),cont);
+            crearrpokemon(entrenadores.get(ind),cont,cont2);
             System.out.println("");
         }
     }
-    public static void crearrpokemon(Entrenador e, int cont) {
+    public static void crearrpokemon(Entrenador e,int cont, int cont2) {
 
         System.out.println("Ingrese la especie del pokemon:");
         String especie = leer.next();
@@ -86,9 +88,20 @@ public class Lap4P2_Equipo6 {
         int xp = leer.nextInt();
         System.out.println("Ingrese la cantidad de puntos necesarios para subir de nivel: ");
         int subirnivel = leer.nextInt();
-        System.out.println("Ingrese la cantidad de movimientos que tiene(no pueden ser mas de 4): ");
-        int mov = leer.nextInt(4);
-        int[] cantmov = new int[mov];
+        System.out.println(movimientos);
+        System.out.println("Ingrese la posicion de movimientos que tiene(no pueden ser mas de 4): ");
+        int ind = leer.nextInt();
+        if (ind>=0&&ind> movimientos.size()) {
+            movimientos.get(ind);
+            System.out.println("");
+            if (cont2>0&&cont2<4) {
+                    p.getMove()[cont2] = movimientos.get(ind);
+                    cont2++;
+                } else if(cont2>4){
+                    System.out.println("Ya no hay espacio");
+                }
+            
+        }
         System.out.println("Ingrese la cantidad de puntos de vida que tiene: ");
         int hp = leer.nextInt();
         System.out.println("Ingrese nivel de ataque: ");
@@ -108,11 +121,14 @@ public class Lap4P2_Equipo6 {
                 break;
             case 'e':
                 if (cont>0&&cont<6) {
+                    
                     e.getPoke()[cont]= new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado);
+                    cont++;
                 } else if(cont>6){
                     System.out.println("Espacio de equipo lleno"
                             + "\n mandando a caja");
                     e.caja.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
+                    
                 }
                 break;
             default:
