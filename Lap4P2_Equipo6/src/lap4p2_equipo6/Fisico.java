@@ -2,11 +2,14 @@ package lap4p2_equipo6;
 
 import java.util.Random;
 
+
 public class Fisico extends Movimiento {
 
-    public Fisico(String nombre, String des, String especie, int nivel, int xpAcum, int cpNes, int hp, int atk, int def, int sp, int spe, String stado) {
-        super(nombre, des, especie, nivel, xpAcum, cpNes, hp, atk, def, sp, spe, stado);
+    public Fisico(String nombre, String des) {
+        super(nombre, des);
     }
+
+
 
     public String getNombre() {
         return nombre;

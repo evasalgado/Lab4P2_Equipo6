@@ -1,15 +1,15 @@
 package lap4p2_equipo6;
 
-public abstract class Movimiento extends Pokemon {
+public abstract class Movimiento  {
 
     protected String nombre;
     protected String des;
 
-    public Movimiento(String nombre, String des, String especie, int nivel, int xpAcum, int cpNes, int hp, int atk, int def, int sp, int spe, String stado) {
-        super(especie, nivel, xpAcum, cpNes, hp, atk, def, sp, spe, stado);
+    public Movimiento(String nombre, String des) {
         this.nombre = nombre;
         this.des = des;
     }
+
 
     public String getNombre() {
         return nombre;

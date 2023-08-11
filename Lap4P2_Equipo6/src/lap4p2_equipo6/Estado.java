@@ -5,10 +5,14 @@ import java.util.Random;
 public class Estado extends Movimiento {
     private String estadoact;
 
-    public Estado(String estadoact, String nombre, String des, String especie, int nivel, int xpAcum, int cpNes, int hp, int atk, int def, int sp, int spe, String stado) {
-        super(nombre, des, especie, nivel, xpAcum, cpNes, hp, atk, def, sp, spe, stado);
+    public Estado(String estadoact, String nombre, String des) {
+        super(nombre, des);
         this.estadoact = estadoact;
     }
+
+   
+
+  
   
 
     
