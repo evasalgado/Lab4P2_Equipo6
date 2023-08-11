@@ -28,23 +28,21 @@ public class Especial extends Movimiento {
     public int mov(Pokemon nn1, Pokemon nn2) {
         Random r = new Random();
 
-        
         int n1 = 1 + r.nextInt(50);
         int n2 = r.nextInt((500 - 100) + 1) + 100;
-        
-        int sum = nn1.getSp() +nn2.getSp();
-        
+
+        int sum = nn1.getSp() + nn2.getSp();
+
         if (sum == n2) {
-            
-           n1= n1 * 2;
-            
-                   return nn2.getHp()-n1;
-            
-        }else{
-        return 0;
-                }
-        
-        
+
+            n1 = n1 * 2;
+
+            return nn2.getHp() - n1;
+
+        } else {
+            return 0;
+        }
+
     }
 
 }

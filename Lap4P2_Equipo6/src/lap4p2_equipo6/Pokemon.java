@@ -34,7 +34,7 @@ public class Pokemon {
         this.stado = stado;
     }
     
-    
+        
 
     public String getEspecie() {
         return especie;

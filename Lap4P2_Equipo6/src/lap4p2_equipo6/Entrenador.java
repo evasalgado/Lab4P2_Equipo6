@@ -1,15 +1,13 @@
-
 package lap4p2_equipo6;
 
 import java.util.ArrayList;
 
-
 public class Entrenador {
-    
+
     private String nombre;
     private int edad;
     private int dinero;
-    private int []poke = new int[6];
+    private int[] poke = new int[6];
     ArrayList<Pokemon> caja = new ArrayList();
 
     public Entrenador() {
@@ -65,7 +63,5 @@ public class Entrenador {
     public String toString() {
         return "Entrenador{" + "nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + ", poke=" + poke + ", caja=" + caja + '}';
     }
-    
-   
-    
+
 }

@@ -1,8 +1,7 @@
-
 package lap4p2_equipo6;
 
-public abstract class Movimiento extends Pokemon{
-    
+public abstract class Movimiento extends Pokemon {
+
     protected String nombre;
     protected String des;
 
@@ -28,11 +27,6 @@ public abstract class Movimiento extends Pokemon{
         this.des = des;
     }
 
+    public abstract int mov(Pokemon nn1, Pokemon nn2);
 
-    
-    
-    
-     public abstract int mov(Pokemon nn1, Pokemon nn2);
-    
-    
 }
