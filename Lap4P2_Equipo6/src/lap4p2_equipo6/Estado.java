@@ -41,6 +41,7 @@ public class Estado extends Movimiento{
     @Override
     public int mov(Pokemon nn1, Pokemon nn2) {
             Random r = new Random();
+            
           int n1 = 1 + r.nextInt(100);
           
           if (n1 >=1 || n1<=75) {

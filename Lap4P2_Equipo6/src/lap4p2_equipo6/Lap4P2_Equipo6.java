@@ -9,11 +9,12 @@ public class Lap4P2_Equipo6 {
     static Scanner leer = new Scanner(System.in);
     static Random alea = new Random();
     static ArrayList<Movimiento> movimientos = new ArrayList<>();
-    static ArrayList<Pokemon> pokemones = new ArrayList<>();
+    static ArrayList<Entrenador> entrenadores=new ArrayList<>();
 
     public static void main(String[] args) {
         int op = 0;
         while (op != 5) {
+            Entrenador e = new Entrenador();
             System.out.println("Bienvenido al Pokedex\n"
                     + "1. Registrar Entrenador\n"
                     + "2. Capturar/ Entrenar\n"
@@ -23,7 +24,7 @@ public class Lap4P2_Equipo6 {
             op = leer.nextInt();
             switch (op) {
                 case 1:
-                    if (pokemones.isEmpty()) {
+                    if (e.getCaja().isEmpty()||e.getPoke().length==-1) {
                         System.out.println("Se debe un pokemon primero");
                         break;
                     } else {
@@ -36,8 +37,13 @@ public class Lap4P2_Equipo6 {
                 case 3:
 
                     break;
-                case 4:
-                    op = 4;
+                case 4: 
+                    System.out.println("Usted desea: \n"
+                            + "1. Añadir movimiento\n");
+                    int opcion2 = leer.nextInt();
+                    break;
+                case 5:
+                    op = 5;
                     System.out.println("Gracias por usar el programa");
                     break;
                 default:
@@ -82,22 +88,47 @@ public class Lap4P2_Equipo6 {
         int spe = leer.nextInt();
         System.out.println("Ingrese el estado actual del pokemon: ");
         String estado = leer.next();
-        pokemones.add(new Pokemon(especie, nivel, xp, spe, hp, atk, def, sp, spe, estado));
+        pokemones.add(new Pokemon(especie, nivel, xp, subirnivel, hp, atk, def, sp, spe, estado));
     }
 
     public static void entrenar() {
         
     }
     public static void movimiento(){
-        System.out.println("");
+        System.out.println("Ingrese nombre de movimiento: ");
+        String nombre = leer.nextLine();
+        nombre = leer.nextLine();
+        System.out.println("Ingrese la descripcion del movimiento: ");
+        String desc = leer.nextLine();
+        desc = leer.nextLine();
+        System.out.println("Datos de movimiento: \n"
+                + "1. Estado\n"
+                + "2. Fisico\n"
+                + "3. Especial");
+        int op =leer.nextInt();
+        switch (op) {
+            case 1:
+                if()
+                break;
+            default:
+                System.out.println("Numero ingresado no es valido");
+        }
     }
+    
     public static int ataque(Pokemon p1, Pokemon p2){
+        int ataque=0;
+        
         System.out.println("Eligiendo pokemon que irá primero....");
         if (p1.getSpe()>p2.getSpe()||p1.getSpe()==p2.getSpe()) {
             System.out.println("Jugador No.1 irá primero");
         } else{
             System.out.println("Juagdor No.2 irá primero");
         }
+        
+        while(p1.getHp()!=0||p2.getHp()!=0){
+            System.out.println("");
+        }
+        return ataque;
     }
     static String getString(String n) {
         Scanner lea = new Scanner(System.in);
