@@ -3,11 +3,16 @@ package lap4p2_equipo6;
 import java.util.Random;
 
 public class Estado extends Movimiento {
+    private String estadoact;
 
-    public Estado(String nombre, String des, String especie, int nivel, int xpAcum, int cpNes, int hp, int atk, int def, int sp, int spe, String stado) {
+    public Estado(String estadoact, String nombre, String des, String especie, int nivel, int xpAcum, int cpNes, int hp, int atk, int def, int sp, int spe, String stado) {
         super(nombre, des, especie, nivel, xpAcum, cpNes, hp, atk, def, sp, spe, stado);
+        this.estadoact = estadoact;
     }
+  
 
+    
+    
     public String getNombre() {
         return nombre;
     }
@@ -24,9 +29,18 @@ public class Estado extends Movimiento {
         this.des = des;
     }
 
+    public String getEstadoact() {
+        return estadoact;
+    }
+
+    public void setEstadoact(String estadoact) {
+        this.estadoact = estadoact;
+    }
+    
+
     @Override
     public int mov(Pokemon nn1, Pokemon nn2) {
-<<<<<<< HEAD
+
         Random r = new Random();
         int n1 = 1 + r.nextInt(100);
 
@@ -36,16 +50,12 @@ public class Estado extends Movimiento {
 
         } else {
             return 0;
-=======
-            Random r = new Random();
-            
-          int n1 = 1 + r.nextInt(100);
-          
-          if (n1 >=1 || n1<=75) {
+
+           
             
               
               
->>>>>>> 6871955f86798d5d0066ddc474731366bd1b3f94
+
         }
 
     }
