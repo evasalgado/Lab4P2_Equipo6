@@ -7,7 +7,7 @@ public class Entrenador {
     private String nombre;
     private int edad;
     private int dinero;
-    private int[] poke = new int[6];
+    private Pokemon[] poke = new Pokemon[6];
     ArrayList<Pokemon> caja = new ArrayList();
 
     public Entrenador() {
