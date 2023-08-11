@@ -26,6 +26,7 @@ public class Estado extends Movimiento {
 
     @Override
     public int mov(Pokemon nn1, Pokemon nn2) {
+<<<<<<< HEAD
         Random r = new Random();
         int n1 = 1 + r.nextInt(100);
 
@@ -35,6 +36,16 @@ public class Estado extends Movimiento {
 
         } else {
             return 0;
+=======
+            Random r = new Random();
+            
+          int n1 = 1 + r.nextInt(100);
+          
+          if (n1 >=1 || n1<=75) {
+            
+              
+              
+>>>>>>> 6871955f86798d5d0066ddc474731366bd1b3f94
         }
 
     }
