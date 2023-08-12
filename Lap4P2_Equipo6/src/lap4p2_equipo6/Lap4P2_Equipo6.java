@@ -39,9 +39,9 @@ public class Lap4P2_Equipo6 {
                         int po = leer.nextInt();
                         if (po == 1) {
                             entrenar();
-                        }else if(po ==2){
-                        capturarPokemon(cont, cont2);
-                        }else{
+                        } else if (po == 2) {
+                            capturarPokemon(cont, cont2);
+                        } else {
                             System.out.println("fuera de rango");
                         }
                         break;
@@ -82,6 +82,7 @@ public class Lap4P2_Equipo6 {
         int money = leer.nextInt();
 
         entrenadores.add(new Entrenador(name, edad, money));
+        System.out.println("Entrenador registrado exitosamente\n");
     }
 
     public static void capturarPokemon(int cont, int cont2) {
@@ -93,6 +94,7 @@ public class Lap4P2_Equipo6 {
             crearrpokemon(entrenadores.get(ind), cont, cont2);
             System.out.println("");
         }
+        System.out.println("Pokemon capturado exitosamente\n");
     }
 
     public static void crearrpokemon(Entrenador e, int cont, int cont2) {
@@ -108,16 +110,21 @@ public class Lap4P2_Equipo6 {
         System.out.println(movimientos);
         System.out.println("Ingrese la posicion de movimientos que tiene(no pueden ser mas de 4): ");
         int ind = leer.nextInt();
-        if (ind >= 0 && ind > movimientos.size()) {
-            movimientos.get(ind);
-            System.out.println("");
-            if (cont2 > 0 && cont2 < 4) {
-                p.getMove()[cont2] = movimientos.get(ind);
-                cont2++;
-            } else if (cont2 > 4) {
-                System.out.println("Ya no hay espacio");
-            }
+        if (movimientos.isEmpty()) {
+            System.out.println("No hay movimientos disponibles");
+        } else {
+            if (ind >= 0 && ind > movimientos.size()) {
+                movimientos.get(ind);
+                System.out.println("");
+                if (cont2 > 0 && cont2 < 4) {
+                    p.getMove()[cont2] = movimientos.get(ind);
+                    cont2++;
+                } else if (cont2 > 4) {
+                    System.out.println("Ya no hay espacio");
+                }
 
+            }
+            
         }
         System.out.println("Ingrese la cantidad de puntos de vida que tiene: ");
         int hp = leer.nextInt();
@@ -151,19 +158,20 @@ public class Lap4P2_Equipo6 {
             default:
                 System.out.println("No esta en las opciones");
         }
-
+        System.out.println("Pokemones añadidos exitosamente\n");
     }
-    public static void entrenar(){
-           Random r = new Random();
+
+    public static void entrenar() {
+        Random r = new Random();
 
         int n1 = r.nextInt(2);
         int n2 = r.nextInt((4999 - 100) + 1) + 100;
-        
-            System.out.println(entrenadores);
+
+        System.out.println(entrenadores);
         System.out.println("ingrese la posicion de un trenador 1");
         int pos = leer.nextInt();
         Entrenador e = entrenadores.get(pos);
-          entrenadores.get(pos);
+        entrenadores.get(pos);
         for (int i = 0; i < entrenadores.get(pos).getPoke().length; i++) {
             System.out.println(entrenadores.get(pos).getPoke()[i]);
 
@@ -171,29 +179,29 @@ public class Lap4P2_Equipo6 {
         System.out.println("entrenador uno ingrese su pokemon");
         int pes = leer.nextInt();
         Pokemon p1[] = e.getPoke();
-          Pokemon p = p1[pes];
-          
-          int tot = n1*n2;
-          
-        int s= p.getAtk();
-          System.out.println("multiplicador"+n1) ;
-          
-            tot = tot*s;
-            System.out.println("puntos de xp" +n2);
-            System.out.println("xp total: " +tot);
-          p.setXpAcum(tot);
-      
-          if (tot >= p.getCpNes()) {
-              System.out.println("su pokemon subio de nivel: "+p.getCpNes());
-             int n= p.getNivel();
-              
-             n++;
-             
-             p.setNivel(n);
-              System.out.println("subio a :");
-              System.out.println(p.getNivel());
+        Pokemon p = p1[pes];
+
+        int tot = n1 * n2;
+
+        int s = p.getAtk();
+        System.out.println("multiplicador" + n1);
+
+        tot = tot * s;
+        System.out.println("puntos de xp" + n2);
+        System.out.println("xp total: " + tot);
+        p.setXpAcum(tot);
+
+        if (tot >= p.getCpNes()) {
+            System.out.println("su pokemon subio de nivel: " + p.getCpNes());
+            int n = p.getNivel();
+
+            n++;
+
+            p.setNivel(n);
+            System.out.println("subio a :");
+            System.out.println(p.getNivel());
         }
-          
+
     }
 
     public static void battle() {
