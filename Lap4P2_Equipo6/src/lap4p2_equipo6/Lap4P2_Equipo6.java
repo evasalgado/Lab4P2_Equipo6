@@ -35,28 +35,32 @@ public class Lap4P2_Equipo6 {
                         System.out.println("se deben registrar varias cosas antes");
                         break;
                     } else {
-
+                        System.out.println("desea entrenar o capturar [1/2]");
+                        int po = leer.nextInt();
+                        if (po == 1) {
+                            entrenar();
+                        }else if(po ==2){
                         capturarPokemon(cont, cont2);
-
+                        }else{
+                            System.out.println("fuera de rango");
+                        }
                         break;
                     }
 
                 case 3:
 
-                    if ((e.getCaja().isEmpty() || e.getPoke().length == -1)) {
+                    if ((e.getCaja().isEmpty() && entrenadores.isEmpty() && movimientos.isEmpty())) {
                         System.out.println("Se debe un pokemon primero");
                         break;
                     } else {
-                        
-                        
-                        
-                        
-                        
+
+                        battle();
+
                         break;
                     }
 
                 case 4:
-                   movimiento();
+                    movimiento();
                     break;
                 case 5:
                     op = 5;
@@ -149,119 +153,145 @@ public class Lap4P2_Equipo6 {
         }
 
     }
+    public static void entrenar(){
+           Random r = new Random();
 
-    public static void entrenar() {
+        int n1 = r.nextInt(2);
+        int n2 = r.nextInt((4999 - 100) + 1) + 100;
+        
+            System.out.println(entrenadores);
+        System.out.println("ingrese la posicion de un trenador 1");
+        int pos = leer.nextInt();
+        Entrenador e = entrenadores.get(pos);
+          entrenadores.get(pos);
+        for (int i = 0; i < entrenadores.get(pos).getPoke().length; i++) {
+            System.out.println(entrenadores.get(pos).getPoke()[i]);
+
+        }
+        System.out.println("entrenador uno ingrese su pokemon");
+        int pes = leer.nextInt();
+        Pokemon p1[] = e.getPoke();
+          Pokemon p = p1[pes];
+          
+          int tot = n1*n2;
+          
+        int s= p.getAtk();
+          System.out.println("multiplicador"+n1) ;
+          
+            tot = tot*s;
+            System.out.println("puntos de xp" +n2);
+            System.out.println("xp total: " +tot);
+          p.setXpAcum(tot);
+      
+          if (tot >= p.getCpNes()) {
+              System.out.println("su pokemon subio de nivel: "+p.getCpNes());
+             int n= p.getNivel();
+              
+             n++;
+             
+             p.setNivel(n);
+              System.out.println("subio a :");
+              System.out.println(p.getNivel());
+        }
+          
+    }
+
+    public static void battle() {
         System.out.println(entrenadores);
         System.out.println("ingrese la posicion de un trenador 1");
         int pos = leer.nextInt();
         Entrenador e = entrenadores.get(pos);
         System.out.println("ingrese la posicion de un trenador 2");
-               int pos2 = leer.nextInt();
-                 Entrenador e1 = entrenadores.get(pos2);
-               
-               entrenadores.get(pos);
-               for (int i = 0; i < entrenadores.get(pos).getPoke().length; i++) {
-                   System.out.println(entrenadores.get(pos).getPoke()[i]);
-               
-            
+        int pos2 = leer.nextInt();
+        Entrenador e1 = entrenadores.get(pos2);
+
+        entrenadores.get(pos);
+        for (int i = 0; i < entrenadores.get(pos).getPoke().length; i++) {
+            System.out.println(entrenadores.get(pos).getPoke()[i]);
+
         }
-               System.out.println("entrenador uno ingrese su pokemon");
-               int pes = leer.nextInt();
-               Pokemon p1 [] = e.getPoke();
-               Pokemon p = p1[pes];
-                 System.out.println("entrenador dos ingrese su pokemon");
-               int pes1 = leer.nextInt();
-               Pokemon p2 [] = e.getPoke();
-               Pokemon pp = p2[pes1];
-               
-               while (!(p.getHp()==0 || pp.getHp()==0)) {            
-              for (int i = 0; i < p.getMove().length; i++) {
-                  
-                  System.out.println(p.getMove()[i]);
-                       
-                        
-                   }
-                   
-                   System.out.println("entrenador uno ingrese el movimiento");
-                   int l = leer.nextInt();
-                   Movimiento [] m = p.getMove();
-                   Movimiento m1 = m[l];/////////////////
-                   
-                       for (int i = 0; i < pp.getMove().length; i++) {
-                  
-                  System.out.println(p.getMove()[i]);
-                       
-                        
-                   }
-                       System.out.println("entrenador dos ingrese el movimiento");
-                   int ll = leer.nextInt();
-                   Movimiento [] mm = p.getMove();
-                   Movimiento mm2 = mm[ll];/////////////////
-                   
-                   if (p.getSpe()>pp.getSpe()) {
-                       
-                       if (m1 instanceof Estado) {
+        System.out.println("entrenador uno ingrese su pokemon");
+        int pes = leer.nextInt();
+        Pokemon p1[] = e.getPoke();
+        Pokemon p = p1[pes];
+        System.out.println("entrenador dos ingrese su pokemon");
+        int pes1 = leer.nextInt();
+        Pokemon p2[] = e.getPoke();
+        Pokemon pp = p2[pes1];
+
+        while (!(p.getHp() == 0 || pp.getHp() == 0)) {
+            for (int i = 0; i < p.getMove().length; i++) {
+
+                System.out.println(p.getMove()[i]);
+
+            }
+
+            System.out.println("entrenador uno ingrese el movimiento");
+            int l = leer.nextInt();
+            Movimiento[] m = p.getMove();
+            Movimiento m1 = m[l];/////////////////
+
+            for (int i = 0; i < pp.getMove().length; i++) {
+
+                System.out.println(p.getMove()[i]);
+
+            }
+            System.out.println("entrenador dos ingrese el movimiento");
+            int ll = leer.nextInt();
+            Movimiento[] mm = p.getMove();
+            Movimiento mm2 = mm[ll];/////////////////
+
+            if (p.getSpe() > pp.getSpe()) {
+
+                if (m1 instanceof Estado) {
 //                          Movimiento m3 = null;
-                        int h = p.getMove()[l].mov(p, pp);
+                    int h = p.getMove()[l].mov(p, pp);
 //                          m3.mov(p, pp);
-                        String x = ((Estado) m1).getEstadoact();
-                        pp.setStado(x);
-                       }else if (m1 instanceof Fisico) {
+                    String x = ((Estado) m1).getEstadoact();
+                    pp.setStado(x);
+                } else if (m1 instanceof Fisico) {
 //                          Movimiento m3 = null;
-                          int h = p.getMove()[l].mov(p, pp);
+                    int h = p.getMove()[l].mov(p, pp);
 //                          m3.mov(p, pp);
-                           
-                       }else if (m1 instanceof Especial) {
+
+                } else if (m1 instanceof Especial) {
 //                          Movimiento m3 = null;
 //                          m3.mov(p, pp);
-                           int h = p.getMove()[l].mov(p, pp);
-                       }
-                       
-                       
-                       
-                   }  else if (pp.getSpe()>p.getSpe()) {
-                       
-                       if (mm2 instanceof Estado) {
+                    int h = p.getMove()[l].mov(p, pp);
+                }
+
+            } else if (pp.getSpe() > p.getSpe()) {
+
+                if (mm2 instanceof Estado) {
 //                          Movimiento m3 = null;
 //                          m3.mov(pp, p);
-                           int h = p.getMove()[ll].mov(pp, p);
-                             String x = ((Estado) mm2).getEstadoact();
-                        p.setStado(x);
-                       }else if (mm2 instanceof Fisico) {
+                    int h = p.getMove()[ll].mov(pp, p);
+                    String x = ((Estado) mm2).getEstadoact();
+                    p.setStado(x);
+                } else if (mm2 instanceof Fisico) {
 //                          Movimiento m3 = null;
 //                          m3.mov(pp, p);
-                              int h = p.getMove()[ll].mov(pp, p);
-                       }else if (mm2 instanceof Especial) {
+                    int h = p.getMove()[ll].mov(pp, p);
+                } else if (mm2 instanceof Especial) {
 //                          Movimiento m3 = null;
 //                          m3.mov(pp, p);
-                              int h = p.getMove()[ll].mov(pp, p);
-                       }
-                       
-                       if (p.getHp()==0 ) {
-                           
-                           System.out.println("el entrenador: "+e1+" gana"); 
-                       }else if(pp.getHp()==0 ){
-                                System.out.println("el entrenador: "+e+" gana"); 
-                       }
-                     
-                   
-                
-                   
-                   
-                   
-                   
-                   
+                    int h = p.getMove()[ll].mov(pp, p);
+                }
+
+                if (p.getHp() == 0) {
+
+                    System.out.println("el entrenador: " + e1 + " gana");
+                } else if (pp.getHp() == 0) {
+                    System.out.println("el entrenador: " + e + " gana");
+                }
+
+            }
+
         }
-                   
-                   
-               }
-              if (p.getHp()==0) {
-                  
-                  
-            
+        if (p.getHp() == 0) {
+
         }
-               
-        
+
     }
 
     public static void movimiento() {
@@ -283,7 +313,7 @@ public class Lap4P2_Equipo6 {
                 System.out.println("Ingrese punto de presicion: ");
                 int precision = leer.nextInt();
                 movimientos.add(new Fisico(nombre, desc));
-                
+
                 break;
             case 2:
                 System.out.println("Ingrese nombre de movimiento: ");
@@ -296,7 +326,7 @@ public class Lap4P2_Equipo6 {
                 poder = leer.nextInt();
                 System.out.println("Ingrese punto de presicion: ");
                 precision = leer.nextInt();
-                
+
                 movimientos.add(new Especial(nombre, desc));
                 break;
             case 3:
@@ -312,7 +342,7 @@ public class Lap4P2_Equipo6 {
                     descactual = getString("Ingrese problema de estado que afectará al rival: ");
                     descactual.toLowerCase();
                 }
-                
+
                 movimientos.add(new Estado(descactual, nombre, desc));
                 break;
             default:
