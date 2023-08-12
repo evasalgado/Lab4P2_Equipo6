@@ -315,7 +315,6 @@ public class Lap4P2_Equipo6 {
                 nombre = leer.nextLine();
                 System.out.println("Ingrese la descripcion del movimiento: ");
                 String desc = leer.nextLine();
-                desc = leer.nextLine();
                 System.out.println("Ingrese punto de poder: ");
                 int poder = leer.nextInt();
                 System.out.println("Ingrese punto de presicion: ");
@@ -329,7 +328,6 @@ public class Lap4P2_Equipo6 {
                 nombre = leer.nextLine();
                 System.out.println("Ingrese la descripcion del movimiento: ");
                 desc = leer.nextLine();
-                desc = leer.nextLine();
                 System.out.println("Ingrese punto de poder: ");
                 poder = leer.nextInt();
                 System.out.println("Ingrese punto de presicion: ");
@@ -342,7 +340,6 @@ public class Lap4P2_Equipo6 {
                 nombre = leer.nextLine();
                 nombre = leer.nextLine();
                 System.out.println("Ingrese la descripcion del movimiento: ");
-                desc = leer.nextLine();
                 desc = leer.nextLine();
                 String descactual = getString("Ingrese problema de estado que afectará al rival: (dormido, envenenado, paralizado, quemado, neutral).");
                 descactual.toLowerCase();
