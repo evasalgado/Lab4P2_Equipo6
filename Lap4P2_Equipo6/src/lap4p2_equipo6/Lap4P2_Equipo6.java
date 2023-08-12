@@ -47,7 +47,11 @@ public class Lap4P2_Equipo6 {
                         System.out.println("Se debe un pokemon primero");
                         break;
                     } else {
-
+                        
+                        
+                        
+                        
+                        
                         break;
                     }
 
@@ -147,7 +151,48 @@ public class Lap4P2_Equipo6 {
     }
 
     public static void entrenar() {
-
+        System.out.println(entrenadores);
+        System.out.println("ingrese la posicion de un trenador 1");
+        int pos = leer.nextInt();
+        Entrenador e = entrenadores.get(pos);
+        System.out.println("ingrese la posicion de un trenador 2");
+               int pos2 = leer.nextInt();
+                 Entrenador e1 = entrenadores.get(pos2);
+               
+               entrenadores.get(pos);
+               for (int i = 0; i < entrenadores.get(pos).getPoke().length; i++) {
+                   System.out.println(entrenadores.get(pos).getPoke()[i]);
+               
+            
+        }
+               System.out.println("entrenador uno ingrese su pokemon");
+               int pes = leer.nextInt();
+               Pokemon p1 [] = e.getPoke();
+               Pokemon p = p1[pes];
+                 System.out.println("entrenador dos ingrese su pokemon");
+               int pes1 = leer.nextInt();
+               Pokemon p2 [] = e.getPoke();
+               Pokemon pp = p2[pes1];
+               
+               while (p.getHp()==0 || pp.getHp()==0) {            
+              for (int i = 0; i < p.getMove().length; i++) {
+                       
+                        
+                        
+                   }
+                   
+                   System.out.println("entrenador uno ingrese el movimiento");
+                   int l = leer.nextInt();
+                   Movimiento [] m = p.getMove();
+                
+                   
+                   
+                   
+                   
+                   
+        }
+               
+        
     }
 
     public static void movimiento() {
