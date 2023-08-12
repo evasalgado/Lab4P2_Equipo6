@@ -174,22 +174,91 @@ public class Lap4P2_Equipo6 {
                Pokemon p2 [] = e.getPoke();
                Pokemon pp = p2[pes1];
                
-               while (p.getHp()==0 || pp.getHp()==0) {            
+               while (!(p.getHp()==0 || pp.getHp()==0)) {            
               for (int i = 0; i < p.getMove().length; i++) {
+                  
+                  System.out.println(p.getMove()[i]);
                        
-                        
                         
                    }
                    
                    System.out.println("entrenador uno ingrese el movimiento");
                    int l = leer.nextInt();
                    Movimiento [] m = p.getMove();
+                   Movimiento m1 = m[l];/////////////////
+                   
+                       for (int i = 0; i < pp.getMove().length; i++) {
+                  
+                  System.out.println(p.getMove()[i]);
+                       
+                        
+                   }
+                       System.out.println("entrenador dos ingrese el movimiento");
+                   int ll = leer.nextInt();
+                   Movimiento [] mm = p.getMove();
+                   Movimiento mm2 = mm[ll];/////////////////
+                   
+                   if (p.getSpe()>pp.getSpe()) {
+                       
+                       if (m1 instanceof Estado) {
+//                          Movimiento m3 = null;
+                        int h = p.getMove()[l].mov(p, pp);
+//                          m3.mov(p, pp);
+                        String x = ((Estado) m1).getEstadoact();
+                        pp.setStado(x);
+                       }else if (m1 instanceof Fisico) {
+//                          Movimiento m3 = null;
+                          int h = p.getMove()[l].mov(p, pp);
+//                          m3.mov(p, pp);
+                           
+                       }else if (m1 instanceof Especial) {
+//                          Movimiento m3 = null;
+//                          m3.mov(p, pp);
+                           int h = p.getMove()[l].mov(p, pp);
+                       }
+                       
+                       
+                       
+                   }  else if (pp.getSpe()>p.getSpe()) {
+                       
+                       if (mm2 instanceof Estado) {
+//                          Movimiento m3 = null;
+//                          m3.mov(pp, p);
+                           int h = p.getMove()[ll].mov(pp, p);
+                             String x = ((Estado) mm2).getEstadoact();
+                        p.setStado(x);
+                       }else if (mm2 instanceof Fisico) {
+//                          Movimiento m3 = null;
+//                          m3.mov(pp, p);
+                              int h = p.getMove()[ll].mov(pp, p);
+                       }else if (mm2 instanceof Especial) {
+//                          Movimiento m3 = null;
+//                          m3.mov(pp, p);
+                              int h = p.getMove()[ll].mov(pp, p);
+                       }
+                       
+                       if (p.getHp()==0 ) {
+                           
+                           System.out.println("el entrenador: "+e1+" gana"); 
+                       }else if(pp.getHp()==0 ){
+                                System.out.println("el entrenador: "+e+" gana"); 
+                       }
+                     
+                   
                 
                    
                    
                    
                    
                    
+        }
+                   
+                   
+               }
+              if (p.getHp()==0) {
+                  
+                  
+            
         }
                
         

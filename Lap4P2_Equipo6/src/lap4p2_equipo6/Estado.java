@@ -5,12 +5,22 @@ import java.util.Random;
 public class Estado extends Movimiento {
     private String estadoact;
 
+ 
+    
+    
+    
+    
+
     public Estado(String estadoact, String nombre, String des) {
         super(nombre, des);
         this.estadoact = estadoact;
     }
 
+    
+
    
+
+  
 
   
   
